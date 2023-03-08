@@ -1,0 +1,5 @@
+packages:
+  - packages/**
+  #一个*值匹配packages/xxx，**可以匹配packages/xxx/xxx任意层级
+  - play
+  - build

@@ -1,0 +1,11 @@
+{
+  "name": "@ljc-ui/hooks",
+  "description": "",
+  "main": "index.ts",
+  "keywords": [],
+  "module": "index.ts",
+  "license": "ISC",
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  }
+}
