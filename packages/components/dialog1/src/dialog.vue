@@ -1,6 +1,6 @@
 <template>
     <Teleport to="body">
-        <l-overlay>
+        <el-overlay>
             <div role="dialog" aria-modal="true" :class="ns.namespace.value + '-overlay-dialog'">
                 <l-dialog-content>
                     <template #header></template>
@@ -10,12 +10,12 @@
                     </template>
                 </l-dialog-content>
             </div>
-        </l-overlay>
+        </el-overlay>
     </Teleport>
 </template>
 
 <script setup lang="ts">
-import { ELOverlay } from '@ljc-ui/components/overlay'
+import { ElOverlay } from '@ljc-ui/components/overlay'
 import LDialogContent from './dialog-content.vue'
 import { useNamespace } from '@ljc-ui/hooks'
 import {  ref,  provide } from 'vue';

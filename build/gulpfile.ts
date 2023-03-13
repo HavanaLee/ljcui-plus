@@ -20,7 +20,7 @@ export const copyFullStyle = async () => {
 
 
 export default series(
-    withTaskName('clean', () => run('rm -rf ./dist')),
+    withTaskName('clean', () => run('pnpm run clean')),
     withTaskName('createOutput', () => mkdir(buildOutput, { recursive: true })),
     parallel(
         runTask('buildModules')

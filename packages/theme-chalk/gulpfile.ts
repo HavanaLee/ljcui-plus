@@ -1,5 +1,5 @@
 import path from 'path'
-import { epOutput } from '@ljc-ui/build/utils'
+import { epOutput } from '@ljc-ui/build-utils'
 import { dest, parallel, src, series } from 'gulp'
 import gulpSass from 'gulp-sass'
 import dartSass from 'sass'

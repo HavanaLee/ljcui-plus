@@ -7,9 +7,9 @@ import {
     writeBundles,
     epRoot
 } from "../utils";
+import VueMacros from 'unplugin-vue-macros/rollup'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import VueMacros from 'unplugin-vue-macros/rollup'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import esbuild from 'rollup-plugin-esbuild'
@@ -31,29 +31,30 @@ export const buildModules = async () => {
         plugins: [
             LjcUiAlias(),
             VueMacros({
-                setupComponent: false,
+                setupComponent: true,
                 setupSFC: false,
                 plugins: {
                     vue: vue({
-                        isProduction: false,
+                        isProduction: false
                     }),
-                    vueJsx: vueJsx(),
-                },
+                    vueJsx: vueJsx()
+                }
             }),
             nodeResolve({
-                extensions: ['.mjs', '.js', '.json', '.ts'],
+                extensions: ['.mjs', '.js', '.ts', '.json']
             }),
             commonjs(),
             esbuild({
                 sourceMap: true,
                 target,
                 loaders: {
-                    '.vue': 'ts',
-                },
-            }),],
+                    '.vue': 'ts'
+                }
+            })
+        ],
         external: await generateExternal({ full: false }),
-        treeshake: false,
-    });
+        treeshake: false // bundle会变大，但是会提升构建性能
+    })
 
     await writeBundles(
         bundle,

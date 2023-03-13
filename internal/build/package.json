@@ -1,5 +1,6 @@
 {
-  "name": "@ljc-ui/oldbuild",
+  "name": "@ljc-ui/build",
+  "version": "1.0.0",
   "description": "",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -9,13 +10,11 @@
     "dev": "pnpm run stub",
     "stub": "unbuild --stub"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "peerDependencies": {
     "vue": "^3.2.25"
   },
   "dependencies": {
+    "@ljc-ui/build-constants": "workspace:^0.0.1",
     "@pnpm/find-workspace-packages": "^4.0.16",
     "@pnpm/logger": "^4.0.0",
     "@rollup/plugin-commonjs": "^22.0.1",
@@ -40,5 +39,8 @@
     "@pnpm/types": "^8.4.0",
     "unbuild": "^0.7.4",
     "vue": "^3.2.37"
-  }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

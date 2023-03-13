@@ -36,11 +36,7 @@
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  name:'LDialogContent'
-}
-</script>
+
 <script lang="ts" setup>
 import { composeRefs } from '@ljc-ui/utils';
 import { computed, inject } from 'vue'
@@ -48,6 +44,10 @@ import { computed, inject } from 'vue'
 import { dialogInjectionKey } from './constants'
 import { dialogContentEmits, dialogContentProps, FOCUS_TRAP_INJECTION_KEY } from './dialog-content'
 
+defineOptions({
+  name:'LDialogContent',
+
+})
 
 const props = defineProps(dialogContentProps)
 defineEmits(dialogContentEmits)

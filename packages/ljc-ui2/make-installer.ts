@@ -1,6 +1,7 @@
 
 import type { App, Plugin } from '@vue/runtime-core'
-import { ConfigProviderContext, provideGlobalConfig } from '@ljc-ui/hooks'
+import { provideGlobalConfig } from '@ljc-ui/hooks'
+import type { ConfigProviderContext } from '@ljc-ui/hooks'
 import { INSTALLED_KEY } from '@ljc-ui/constants'
 
 const version = '0.0.0-dev.1'

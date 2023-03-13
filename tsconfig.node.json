@@ -9,7 +9,10 @@
   "include": [
     "build",
     "packages/theme-chalk/*",
-    "packages/ljc-ui/package.json"
+    "packages/ljc-ui-plus/package.json",
+    "packages/ljc-ui-plus/version.ts",
+    "internal/**/*",
+    "internal/**/*.json",
   ],
   "exclude": ["**/__tests__/**", "**/tests/**", "**/dist"]
 }

@@ -1,6 +1,6 @@
 import { inject, getCurrentInstance, ref, computed, App, provide, unref } from 'vue'
 import type { Ref, InjectionKey, ExtractPropTypes } from 'vue'
-import { buildProps } from '@ljc-ui/utils'
+import { buildProps, keysOf } from '@ljc-ui/utils'
 import { MaybeRef } from '@vueuse/core'
 import { namespaceContextKey } from '../use-namespace'
 import { zIndexContextKey } from '../use-z-index'

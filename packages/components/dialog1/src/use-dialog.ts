@@ -1,5 +1,5 @@
 import { computed, getCurrentInstance, nextTick, onMounted, ref, watch } from 'vue'
-import { useZIndex, useGlobalConfig, defaultNamespace, useId } from '@ljc-ui/hooks'
+import { useZIndex, useId } from '@ljc-ui/hooks'
 
 import type { DialogProps, DialogEmits } from './dialog'
 import type { Ref, SetupContext, CSSProperties } from 'vue'
@@ -11,7 +11,7 @@ export const useDialog = (props: DialogProps, targetRef: Ref<HTMLElement | undef
     const emit = instance.emit as SetupContext<DialogEmits>['emit']
     const { nextZIndex } = useZIndex()
 
-    let lastPostion = ''
+    // let lastPostion = ''
     const bodyId = useId()
     const visible = ref(false)
     const closed = ref(false)
@@ -21,11 +21,11 @@ export const useDialog = (props: DialogProps, targetRef: Ref<HTMLElement | undef
     let openTimer: (() => void) | undefined = undefined
     let closeTimer: (() => void) | undefined = undefined
 
-    const namespace = useGlobalConfig('namespace', defaultNamespace)
+    // const namespace = useGlobalConfig('namespace', defaultNamespace)
 
     const style = computed<CSSProperties>(() => {
         const style: CSSProperties = {}
-        const varPrefix = `--${namespace.value}-dialog` as const
+        // const varPrefix = `--${namespace.value}-dialog` as const
         if (!props.fullscreen) {
             if (props.top) {
                 style[`margin-top`] = props.top
